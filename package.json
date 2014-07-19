@@ -1,0 +1,20 @@
+{
+  "name": "fastlib",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Henry Qian",
+    "email": "hqidea@yahoo.com",
+    "url": "http://www.hqhome.net/"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.8",
+    "ejs": "*",
+    "request": "~2.36.0",
+    "mongoose": "~3.8.12",
+    "sse4_crc32": "~2.1.0"
+  }
+}
