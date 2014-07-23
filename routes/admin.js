@@ -49,7 +49,7 @@ exports.initAccount = function(req, res) {
 };
 
 exports.resetPassword = function(req, res) {
-    var username = req.param('username');
+    var username = req.session['username'];
     var password = req.param('password');
 
     admin.resetPassword(username, password, function(err, isChanged) {
@@ -70,6 +70,7 @@ exports.login = function(req, res) {
 
         if (data) {
             req.session['auth'] = 'admin';
+            req.session['username'] = username;
             res.send(200, {message: 'login success'});
         }
         else {
@@ -81,6 +82,7 @@ exports.login = function(req, res) {
 exports.logout = function(req, res) {
     if (req.session['auth']) {
         delete req.session['auth'];
+        delete req.session['username'];
     }
 
     res.send(200, {message: 'logout success'});
