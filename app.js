@@ -32,6 +32,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+global.systemLock = true;
 store.initCollections();
 
 app.put('/admin/init', admin.initAccount);
@@ -42,7 +43,7 @@ app.get('/admin/collections', admin.isAdmin, admin.showCollections);
 app.put('/admin/collection/:hash', admin.isAdmin, admin.addCollection);
 app.delete('/admin/collection/:hash', admin.isAdmin, admin.removeCollection);
 
-app.get('/query/:title', routes.query);
+app.get('/query/:title', routes.isLocked, routes.query);
 
 app.get('/', routes.index);
 app.get('/query', routes.queryIndex);

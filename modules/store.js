@@ -22,6 +22,8 @@ var initCollections = function() {
         collections = docs;
         collections.sort(compare);
         console.log('[initCollections]', collections);
+
+        global.systemLock = false;
     });
 };
 

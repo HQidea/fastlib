@@ -72,6 +72,8 @@ exports.login = function(req, res) {
             req.session['auth'] = 'admin';
             req.session['username'] = username;
             res.send(200, {message: 'login success'});
+
+            global.systemLock = true;
         }
         else {
             res.send(401, {message: 'login failed'});
@@ -83,6 +85,8 @@ exports.logout = function(req, res) {
     if (req.session['auth']) {
         delete req.session['auth'];
         delete req.session['username'];
+
+        global.systemLock = false;
     }
 
     res.send(200, {message: 'logout success'});

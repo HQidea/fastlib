@@ -20,6 +20,10 @@ module.exports = {
         adminExists: {
             message: 'Admin exists.',
             status: 423
+        },
+        systemLocked: {
+            message: 'System has been locked.',
+            status: 503
         }
     },
     hashLen: 10,

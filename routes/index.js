@@ -1,4 +1,5 @@
 var query = require('../modules/query.js');
+var settings = require('../settings.js');
 
 exports.index = function(req, res) {
     res.redirect('/query');
@@ -23,4 +24,14 @@ exports.query = function(req, res) {
 
 exports.queryIndex = function(req, res) {
     res.render('index', {title: 'fastlib'});
+};
+
+exports.isLocked = function(req, res, next) {
+    if (global.systemLock) {
+        var err = settings.error.systemLocked;
+        console.log('[Locked]', err);
+        return res.send(err.status, {message: err.message});
+    }
+
+    next();
 };
