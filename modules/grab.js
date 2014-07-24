@@ -32,7 +32,7 @@ var list = function(title, callback, next, fastCb) {
                 _time('list_regex', 1);
                 _time('list_regex_2', 1);
                 delete books[title];
-                return callback(settings.error.bookNotFound);
+                return callback && callback(settings.error.bookNotFound);
             }
             var trim = table[0].replace(/\s/g, '');
             var deUnicode = trim.replace(/&#(\w+);/g, function(match, unicode) {
