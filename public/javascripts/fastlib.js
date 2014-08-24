@@ -192,7 +192,7 @@
                       + '</li>';
             }
             return html;
-        }
+        };
 
         return {
             init: init
