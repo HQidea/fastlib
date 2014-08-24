@@ -1,11 +1,86 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<!doctype html>
+<html lang="zh-cn" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>杭州电子科技大学图书馆书目检索系统——光速版</title>
+    <script>if(location.hash=='#!list')location.href=location.href.slice(0,-6);</script>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css?t=<%= time %>"/>
+    <link rel="stylesheet" href="/stylesheets/style.css?t=<%= time %>"/>
+</head>
+<body>
+    <section class="container search">
+        <p class="school">杭州电子科技大学</p>
+        <h1 class="text-center">图书馆</h1>
+        <span class="fast">光速版</span>
+        <form class="js-query" action="query/">
+            <div class="input-group col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                <input class="form-control input-title" name="title" type="text">
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-search" type="submit">
+                        <p>检索</p>
+                        <div class="loading hide">
+                            <span class="rect-1"></span>
+                            <span class="rect-2"></span>
+                            <span class="rect-3"></span>
+                        </div>
+                    </button>
+                </span>
+            </div>
+        </form>
+        <footer>
+            <p class="copyright">&copy; 2014 <a href="//www.hqhome.net/?from=fastlib">HQHOME</a></p>
+            <p class="weibo"><a href="//weibo.com/hqidea">@HQidea</a></p>
+        </footer>
+    </section>
+    <section class="container-fluid result hide">
+        <header class="row">
+            <h2 class="h2-header col-xs-3 col-sm-2 col-md-1">图书馆</h2>
+            <form class="form-header col-xs-9 col-sm-10 col-md-11 js-query" action="query/">
+                <div class="input-group">
+                    <input class="form-control input-header" name="title" type="text">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-header" type="submit"><span>G</span></button>
+                    </span>
+                </div>
+            </form>
+        </header>
+        <div class="books row">
+            <ol>
+
+            </ol>
+            <div class="loading js-more hide">
+                <span class="rect-1"></span>
+                <span class="rect-2"></span>
+                <span class="rect-3"></span>
+                <span class="rect-4"></span>
+            </div>
+            <p class="nomore hide">
+                图书馆都被你搬空了~
+            </p>
+            <p class="notfound hide">
+                哇！这么牛逼的书名还没有人想到，<br>只有靠你自己出版了(T_T)
+            </p>
+            <div class="overlay hide">
+                <div class="loading">
+                    <span class="rect-1"></span>
+                    <span class="rect-2"></span>
+                    <span class="rect-3"></span>
+                    <span class="rect-4"></span>
+                    <span class="rect-5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        (function() {
+            var script = document.createElement('script');
+            script.src = '/javascripts/fastlib.js?t=<%= time %>';
+            document.getElementsByTagName('head')[0].appendChild(script);
+        })();
+    </script>
+</body>
 </html>

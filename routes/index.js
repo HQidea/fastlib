@@ -23,7 +23,10 @@ exports.query = function(req, res) {
 };
 
 exports.queryIndex = function(req, res) {
-    res.render('index', {title: 'fastlib'});
+    res.render('index', {
+        title: 'fastlib',
+        time: +new Date()
+    });
 };
 
 exports.isLocked = function(req, res, next) {
