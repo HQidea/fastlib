@@ -126,12 +126,21 @@
 
                     location.hash = '!list';
                     // $('.input-title').value = title;
-                    $('.input-header').value = title;
+                    $inHea.value = title;
                     if (status === 200 || status === 304) {
                         $('.books ol').innerHTML = loadBooks(data);
                         $('.notfound').hide();
                         bookTitle = title;
                         nextPage = 2;
+
+                        setTimeout(function() {
+                            window.scrollTo(0, 0);
+                            if (document.documentElement.scrollHeight < window.innerHeight) {
+                                loading = true;
+                                $('.js-more').show();
+                                loadMore(bookTitle, nextPage);
+                            }
+                        }, 0);
                     }
                     else if (status === 404) {
                         $('.books ol').innerHTML = '';

@@ -217,6 +217,7 @@ header {
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
+.books ol:after,
 .books ol li:after{
     content: '';
     display: block;
@@ -297,10 +298,6 @@ aside p {
         margin-left: 10%;
         margin-right: 10%;
     }
-    .books ol li {
-        float: left;
-        width: 50%;
-    }
 }
 
 @media (min-width: 600px) {
@@ -308,12 +305,9 @@ aside p {
         font-size: 50px;
         font-size: 5rem;
     }
-}
-
-@media (min-width: 768px) {
     .books ol li {
         float: left;
-        width: 33.3%;
+        width: 50%;
     }
 }
 
@@ -326,6 +320,10 @@ aside p {
     }
     footer {
         margin-top: 25%;
+    }
+    .books ol li {
+        float: left;
+        width: 33.3%;
     }
 }
 

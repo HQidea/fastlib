@@ -6,7 +6,7 @@ exports.index = function(req, res) {
 };
 
 exports.query = function(req, res) {
-    var title = req.param('title').trim();
+    var title = req.param('title').trim().toLowerCase();
     var page = req.param('page') && req.param('page').trim().match(/^\d+$/) ?
         req.param('page').trim() : 1;
 
