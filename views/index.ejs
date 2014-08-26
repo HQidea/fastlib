@@ -8,8 +8,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>杭州电子科技大学图书馆书目检索系统——光速版</title>
     <script>if(location.hash=='#!list')location.href=location.href.slice(0,-6);</script>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.css?t=<%= time %>"/>
-    <link rel="stylesheet" href="/stylesheets/style.css?t=<%= time %>"/>
+    <link rel="stylesheet" href="/stylesheets/style.min.css"/>
 </head>
 <body>
     <section class="container search">
@@ -78,7 +77,7 @@
     <script>
         (function() {
             var script = document.createElement('script');
-            script.src = '/javascripts/fastlib.js?t=<%= time %>';
+            script.src = '/javascripts/fastlib.min.js';
             document.getElementsByTagName('head')[0].appendChild(script);
         })();
     </script>

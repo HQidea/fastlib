@@ -43,7 +43,7 @@ ol {
     text-shadow: 2px 2px 4px grey;
 }
 .fast {
-    position: absolute;
+    position: fixed;
     top: 8px;
     right: -26px;
     z-index: 100;

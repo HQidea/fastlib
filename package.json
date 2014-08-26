@@ -16,5 +16,10 @@
     "request": "~2.36.0",
     "mongoose": "~3.8.12",
     "sse4_crc32": "~2.1.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-contrib-cssmin": "~0.10.0"
   }
 }
