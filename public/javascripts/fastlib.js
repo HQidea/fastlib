@@ -146,6 +146,10 @@
                         $('.books ol').innerHTML = '';
                         $('.notfound').show();
                     }
+                    else {
+                        $('.books ol').innerHTML = '';
+                        $('.error').show();
+                    }
                     $('.btn-search p').show();
                     $('.btn-search .loading').hide();
                     $('.overlay').hide();

@@ -267,6 +267,7 @@ aside p {
     color: #73A6F7;
     text-align: center;
 }
+.error,
 .notfound {
     margin-top: 20%;
     font-weight: 700;
