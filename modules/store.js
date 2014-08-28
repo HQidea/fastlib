@@ -1,4 +1,4 @@
-var crc32c = require('sse4_crc32');
+var crc32c = require('easy-crc32');
 var mongo = require('../models/mongo.js');
 var settings = require('../settings.js');
 var HashingRing = mongo.HashingRing;

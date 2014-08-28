@@ -15,7 +15,7 @@
     "ejs": "*",
     "request": "~2.36.0",
     "mongoose": "~3.8.12",
-    "sse4_crc32": "~2.1.0"
+    "easy-crc32": "0.0.2"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
