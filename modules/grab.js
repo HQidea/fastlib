@@ -20,7 +20,7 @@ var list = function(title, callback, next, fastCb) {
     }
 
     _time('list_request', 0);
-    request(url + query + title + page, function(err, res, body) {
+    request(url + query + encodeURIComponent(title) + page, function(err, res, body) {
         if (!err && res.statusCode === 200) {
             var i/*, time = +new Date()*/;
 
@@ -73,6 +73,7 @@ var list = function(title, callback, next, fastCb) {
         else {
             console.log('[list] request error:', err || res.statusCode);
             callback && callback(settings.error.badRequest);
+            delete books[title];
         }
     });
 };

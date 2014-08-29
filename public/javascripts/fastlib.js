@@ -130,6 +130,7 @@
                     if (status === 200 || status === 304) {
                         $('.books ol').innerHTML = loadBooks(data);
                         $('.notfound').hide();
+                        $('.error').hide();
                         bookTitle = title;
                         nextPage = 2;
 
