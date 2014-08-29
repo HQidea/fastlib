@@ -5,6 +5,9 @@
     };
     try {
         EventTarget.prototype.on = eventHandler;
+        if (!window.on) {
+            window.on = eventHandler;
+        }
     }
     catch (err) {
         Element.prototype.on = eventHandler;
@@ -136,7 +139,7 @@
 
                         setTimeout(function() {
                             window.scrollTo(0, 0);
-                            if (document.documentElement.scrollHeight < window.innerHeight) {
+                            if (document.documentElement.scrollHeight <= window.innerHeight) {
                                 loading = true;
                                 $('.js-more').show();
                                 loadMore(bookTitle, nextPage);
